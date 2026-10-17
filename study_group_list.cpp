@@ -1,9 +1,9 @@
 /*
  * Course: COEN 2220 - Programming 2
- * Name: [Your Name]
+ * Name: [Jose Alejandro Vera Guagua]
  * Lab: Lab 9 - Linked Lists
  * Description: Practice - a linked list of study groups
- * Due date: [Date]
+ * Due date: [10/19/2026]
  */
 
 #include <iostream>
@@ -119,7 +119,7 @@ int main()
     // TODO (Part E): Display every stored group and print the result of size().
     studyGroups.displayGroups();
     cout << "Number of groups: " << studyGroups.size() << endl;
-    
+
     // TODO (Part E): Search for one stored group code and one missing group code; print both bool results.
     cout << "Contains SG-230: " << studyGroups.containsGroup("SG-230") << endl;
     cout << "Contains SG-999: " << studyGroups.containsGroup("SG-999") << endl;
