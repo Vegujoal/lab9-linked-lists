@@ -18,9 +18,9 @@ private:
     // TODO (Part C): Define a Node with string groupCode, int meetingRoom, and Node *next.
     struct Node
     {
-        string groupCode; // Store one study group code.
-        int meetingRoom;  // Store the meeting room number.
-        Node *next;       // Store the address of the next node.
+        string groupCode; 
+        int meetingRoom;  
+        Node *next;       
     };
     // TODO (Part C): Declare a Node *head data member for the first node address.
     Node *head;
@@ -38,8 +38,49 @@ public:
     // ===== Resolve these TODOs later (Part D) =====
 
     // TODO (Part D): Write addGroup. It receives a group code and room number, adds one node at the end, and updates groupCount.
+    int addGroup(const string& newGroupCode, int newMeetingRoom)
+    {
+        Node *newNode = new Node;
+        newNode->groupCode = newGroupCode;
+        newNode->meetingRoom = newMeetingRoom;
+        newNode->next = nullptr;
+
+        if (head == nullptr)
+        {
+            head = newNode;
+        }
+        else
+        {
+            Node *currentNode = head;
+
+            while (currentNode->next != nullptr)
+            {
+                currentNode = currentNode->next;
+            }
+
+            currentNode->next = newNode;
+        }
+
+        groupCount++;
+        return groupCount;
+    }
     // TODO (Part D): Write displayGroups as a const member function.
+    void displayGroups() const
+    {
+        Node *currentNode = head;
+
+        while (currentNode != nullptr)
+        {
+            cout << "Group Code: " << currentNode->groupCode
+                 << ", Meeting Room: " << currentNode->meetingRoom << endl;
+            currentNode = currentNode->next;
+        }
+    }
     // TODO (Part D): Write size as a const member function that returns groupCount.
+    int size() const
+    {
+        return groupCount;
+    }
 
     // ===== Resolve these TODOs later (Part E) =====
 
